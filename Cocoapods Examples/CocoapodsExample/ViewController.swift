@@ -10,6 +10,12 @@ import Alamofire
 import Kingfisher
 import FLEX
 
+/*
+struct Images{
+    static var rosePink: UIImage?{ UIImage(named: "pembe")}
+}
+*/
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var redView: UIView!
@@ -20,8 +26,10 @@ class ViewController: UIViewController {
         fetchWithURLSession()
         fetchWithAlamofire()
         setConstraintViaSnapKit()
-        setImageViaKingfisher()
+        //setImageViaKingfisher()
         setupFlexGesture()
+        
+        //imageView.image = Images.rosePink
         
     }
     

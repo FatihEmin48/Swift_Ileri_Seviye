@@ -13,4 +13,7 @@ target 'CocoapodsExample' do
   pod 'FLEX'
   pod 'IQKeyboardManagerSwift'
 
+  pod 'SwiftGen'
+
+
 end
