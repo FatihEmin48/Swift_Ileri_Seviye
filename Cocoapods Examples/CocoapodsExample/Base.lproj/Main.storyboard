@@ -23,11 +23,25 @@
                                     <constraint firstAttribute="height" constant="128" id="p0n-Ap-8JT"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63c-fW-EQb">
+                                <rect key="frame" x="76" y="59" width="242" height="211"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="63c-fW-EQb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9Fu-d3-KrF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="63c-fW-EQb" secondAttribute="trailing" constant="77" id="9Lg-O4-qvw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="63c-fW-EQb" secondAttribute="trailing" constant="75" id="Ygb-T0-6MD"/>
+                            <constraint firstItem="63c-fW-EQb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="cA6-QQ-nFJ"/>
+                            <constraint firstItem="j88-Ur-Vuo" firstAttribute="top" secondItem="63c-fW-EQb" secondAttribute="bottom" constant="175" id="gnQ-C2-mBY"/>
+                            <constraint firstItem="63c-fW-EQb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="olJ-3z-GTb"/>
+                            <constraint firstItem="63c-fW-EQb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="rOz-PM-3ut"/>
+                            <constraint firstItem="j88-Ur-Vuo" firstAttribute="top" secondItem="63c-fW-EQb" secondAttribute="bottom" constant="92" id="w0A-Qe-OQ8"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="63c-fW-EQb" id="iR9-P2-gYv"/>
                         <outlet property="redView" destination="j88-Ur-Vuo" id="PeF-BZ-DQe"/>
                     </connections>
                 </viewController>
