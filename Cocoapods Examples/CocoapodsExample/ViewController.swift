@@ -7,19 +7,49 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var redView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()        
         //fetchWithURLSession()
         fetchWithAlamofire()
-        
         setConstraintViaSnapKit()
+        setImageViaKingfisher()
 
     }
+    
+    //MARK: - Kingfisher
+    func setImageViaKingfisher(){
+        imageView.kf.setImage(with: URL(string:"https://uludag.edu.tr/logolar2018/logo_jpeg/2_muhendislik_sb.jpg"))
+    }
+    
+    func setImageViaAlamofire(){
+        let cache = NSCache<AnyObject, AnyObject>()
+        let url = URL(string:"https://uludag.edu.tr/logolar2018/logo_jpeg/2_muhendislik_sb.jpg")
+        if let imageFromCache = cache.object(forKey: url as AnyObject) as? UIImage{
+            imageView.image = imageFromCache
+            return
+        }
+        AF.request(url!, method: .get).response{ response in
+            switch response.result{
+            case .failure(let error):
+                print(error)
+            case .success(let data):
+                guard let data = data,
+                        let image = UIImage(data: data) else{
+                    return
+                }
+                cache.setObject(image, forKey: url as AnyObject)
+                self.imageView.image = image
+            }
+        }
+    }
+    
     
     //MARK: - SnapKit
     func setConstraintViaSnapKit(){

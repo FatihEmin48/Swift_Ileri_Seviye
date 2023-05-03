@@ -9,5 +9,6 @@ target 'CocoapodsExample' do
   
   pod 'Alamofire'
   pod 'SnapKit'
-
+  pod 'Kingfisher'
+  
 end
