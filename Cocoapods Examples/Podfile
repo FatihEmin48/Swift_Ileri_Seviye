@@ -8,5 +8,6 @@ target 'CocoapodsExample' do
   # Pods for CocoapodsExample
   
   pod 'Alamofire'
+  pod 'SnapKit'
 
 end
