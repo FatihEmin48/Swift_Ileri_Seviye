@@ -11,4 +11,7 @@ target 'CocoapodsExample' do
   pod 'SnapKit'
   pod 'Kingfisher'
   pod 'FLEX'
+  pod 'IQKeyboardManagerSwift'
+  pod 'SwiftGen'
+
 end
