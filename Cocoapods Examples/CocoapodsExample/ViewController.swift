@@ -10,11 +10,11 @@ import Alamofire
 import Kingfisher
 import FLEX
 
-/*
+
 struct Images{
-    static var rosePink: UIImage?{ UIImage(named: "pembe")}
+    static var rosePink: UIImage?{ UIImage(named: "mavi")}
 }
-*/
+
 
 class ViewController: UIViewController {
     
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         //setImageViaKingfisher()
         setupFlexGesture()
         
-        //imageView.image = Images.rosePink
+        imageView.image = Images.rosePink
         
     }
     
