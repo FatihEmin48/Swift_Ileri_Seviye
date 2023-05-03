@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import FLEX
 
 class ViewController: UIViewController {
     
@@ -16,12 +17,27 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()        
-        //fetchWithURLSession()
+        fetchWithURLSession()
         fetchWithAlamofire()
         setConstraintViaSnapKit()
         setImageViaKingfisher()
-
+        setupFlexGesture()
+        
     }
+    
+    
+    //MARK: - FLEX
+    @objc func didFlexGestureRecognized(_ sender: UITapGestureRecognizer){
+        FLEXManager.shared.showExplorer()
+    }
+    
+    func setupFlexGesture(){
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didFlexGestureRecognized(_:)))
+        gesture.numberOfTapsRequired = 2
+        gesture.numberOfTouchesRequired = 2
+        view.addGestureRecognizer(gesture)
+    }
+
     
     //MARK: - Kingfisher
     func setImageViaKingfisher(){
@@ -90,7 +106,5 @@ class ViewController: UIViewController {
         }
         task.resume()
     }
-    
-
 }
 
